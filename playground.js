@@ -1,15 +1,33 @@
-/* 
-// Metacrafters - Beginning Javascript
-//
-// This is a javascript playground for testing your javascript code!
-// When you are ready to test, simply right click and select "Run Code"
-// to see the result print below. If you have more then one snippet of code,
-// you can highlight the code you want to test, and then right click and select "Run Code"
-*/
+let collectionNFT = [];
 
-// Enter your code below this line
 
-// Code example
-for(var i=1; i<=5; i++) {
- console.log(i);
+function mintNFT(_brand,_color,_size) {
+const shoes = {
+brand: _brand,
+color: _color,
+size: _size,
 }
+collectionNFT.push(shoes);}
+
+
+function listNFTs() {
+    for(let i = 0; i <
+collectionNFT.length; i++) {
+    console.log(collectionNFT[i]);
+    console.log("\nModel Number: " + (i + 1)); 
+ }
+}
+
+function getTotalSupply() {
+    console.log("TOTAL NFT: " + 
+collectionNFT.length);
+}
+
+mintNFT("ADIDAS","WHITE",9);
+mintNFT("NIKE","BLACK",8);
+mintNFT("VANS","BROWN",6);
+mintNFT("NEW BALANCE","WHITE",9);
+mintNFT("JORDAN","RED",7);
+
+listNFTs();
+getTotalSupply();
