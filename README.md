@@ -1,5 +1,5 @@
 # Cekayy's Token
-this solidty program is about gas token, Whenever any transaction on Ethereum is run, it requires “gas” in accordance with the amount of computational resources used to compute the operations performed by the transaction.
+this solidty program is about gas token, Whenever any transaction on Ethereum is run, it requires gas in accordance with the amount of computational resources used to compute the operations performed by the transaction.
 
 ## Getting Started
 
