@@ -1,10 +1,5 @@
-# Hello World
-
-This Solidity program is a simple "Hello World" program that demonstrates the basic syntax and functionality of the Solidity programming language. The purpose of this program is to serve as a starting point for those who are new to Solidity and want to get a feel for how it works.
-
-## Description
-
-This program is a simple contract written in Solidity, a programming language used for developing smart contracts on the Ethereum blockchain. The contract has a single function that returns the string "Hello World!". This program serves as a simple and straightforward introduction to Solidity programming, and can be used as a stepping stone for more complex projects in the future.
+# Cekayy's Token
+this solidty program is about gas token, Whenever any transaction on Ethereum is run, it requires “gas” in accordance with the amount of computational resources used to compute the operations performed by the transaction.
 
 ## Getting Started
 
@@ -12,33 +7,52 @@ This program is a simple contract written in Solidity, a programming language us
 
 To run this program, you can use Remix, an online Solidity IDE. To get started, go to the Remix website at https://remix.ethereum.org/.
 
-Once you are on the Remix website, create a new file and after that name it, so now you can start coding
+Once you are on the Remix website, create a new file and after that name it, so now i can start coding
 
 ```javascript
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.18;
 
-contract HelloWorld {
-    function sayHello() public pure returns (string memory) {
-        return "Hello World!";
+contract MyToken {
+
+    // public variables here
+    string public tokenName = "Ceekay";
+    string public tokenAbbrv = "Ck";
+    uint public totalSupply = 0;
+
+    // mapping variable here
+    mapping(address => uint) public balances;
+
+    // mint function
+    function mint (address _address, uint _value) public {
+        totalSupply += _value;
+        balances [_address] += _value;
+    }
+
+    // burn function
+    function burn (address _address, uint _value) public {
+        if (balances[_address] >= _value) {
+            totalSupply -= _value;
+            balances[_address] -= _value;
+        }
     }
 }
 
 ```
 
-To compile the code, click on the "Solidity Compiler" tab in the left-hand sidebar. Make sure the "Compiler" option is set to "0.8.4" (or another compatible version), and then click on the "Compile HelloWorld.sol" button.
+after the coding you need to compile it, you'll see in the left part at the middle there's a solidity compiler "click it" after you click it you will see a auto compile click it and under it there was a compile sol "click it to"
 
-Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "HelloWorld" contract from the dropdown menu, and then click on the "Deploy" button.
+Once the code is compiled, you can deploy the contract by clicking on the "Deploy & Run Transactions" tab in the left-hand sidebar. Select the "m3.sol" contract from the dropdown menu, and then click on the "Deploy" button.
 
-Once the contract is deployed, you can interact with it by calling the sayHello function. Click on the "HelloWorld" contract in the left-hand sidebar, and then click on the "sayHello" function. Finally, click on the "transact" button to execute the function and retrieve the "Hello World!" message.
+Once the contract is deployed, go to the acccount and copy it after that go to the deployed contacts before pasting it check your total supply first, so when your than go to the value and input the value that you want after that go to the mint and paste the address or the account that you copy and input the value under it after that check the total supply and after that the value that you input in the mint is the same in your total supply 
+
+but burn is the same like mint but burn  substract  burn means burn it has the same procedure like mint 
 
 ## Authors
 
-Metacrafter Chris  
-[@metacraftersio](https://twitter.com/metacraftersio)
-
+Christian Kurl Ruzol
+8215638@ntc.edu.ph
 
 ## License
 
 This project is licensed under the MIT License - see the LICENSE.md file for details
 
-This project is licensed under the [NAME HERE] License - see the LICENSE.md file for details
